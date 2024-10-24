@@ -1,72 +1,55 @@
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.php">Aplikasi Kasir</a>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        
-<div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">MENU</div>
-                            <a class="nav-link" href="index.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-                                Order
-                            </a>
-                            <a class="nav-link" href="index.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-box"></i></div>
-                                Stok Barang
-                            </a>
-                            <a class="nav-link" href="index.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-download"></i></div>
-                                Barang Masuk
-                            </a>
-                            <a class="nav-link" href="login.php">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
-                                Logout
-                            </a>
-                            
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    
-                                    
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div>
-                            
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
-                </nav>
-            </div>
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="index.php">
+            <i class="fas fa-fw fa-home"></i>
+            <span>Dashboard</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="?page=pelanggan">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Pelanggan</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="?page=produk">
+        <i class="fas fa-box-open"></i>
+            <span>Produk/Barang</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="?page=pembelian">
+        <i class="fas fa-shopping-cart"></i>
+            <span>Pembelian</span></a>
+    </li>
+    <hr class="sidebar-divider d-none d-md-block">
+    <li class="nav-item active">
+        <a class="nav-link" href="logout.php">
+        <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+    <div class="sb-sidenav-footer text-center text-dark mt-auto" style="background-color: #e9ecef;">
+        <div class="small">Logged in as:</div>
+        <?php echo $_SESSION['user']['nama']; ?>
+    </div>
+</ul>
+
+<!-- End of Sidebar -->
